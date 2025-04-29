@@ -1,12 +1,15 @@
 import React from "react";
+import Links from "./Links";
 
-function About() {
+function About({bio, links}) {
+  console.log(bio, links)
+  
   return (
     <div id="about">
       <h2>About Me</h2>
-      <p>Put the bio in here</p>
+      {!bio ? null : bio == "" ? null : <p>{bio}</p>}
       <img src="https://i.imgur.com/mV8PQxj.gif" alt="I made this" />
-      {/* add your <Links /> component here */}
+      <Links {...links}/> 
     </div>
   );
 }
